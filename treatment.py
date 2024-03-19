@@ -16,7 +16,7 @@ def test_directories(wordlist_part):
         directory_url = url + "/" + directory
         print("testing " + directory_url)
         response = requests.get(directory_url)
-        if response.status_code == 200:
+        if response.status_code in [200, 403, 500]:
             directory_list.append(directory_url)
 
 # Splitting the wordlist into three equal parts
